@@ -487,7 +487,7 @@
 
         <!-- Hero -->
         <section class="hero">
-            <h1>Coding Round</h1>
+            <h1>Welcome to the Coding Round.<br> Show us your problem-solving skills!</h1>
             <p>A technical assessment focused on backend logic, database operations, and dynamic frontend interactions
                 using jQuery or JS.</p>
             <div class="requirements-box">
