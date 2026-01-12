@@ -1,4 +1,14 @@
-🚀 Setup Guide
+Setup Guide
+
+Make sure the following versions are installed on your system:
+
+PHP: 8.2.12
+
+Laravel Framework: 12.46.0
+
+Composer
+
+====================================================
 
 Follow these steps to get the project running locally.
 
