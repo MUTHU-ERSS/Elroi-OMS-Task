@@ -713,7 +713,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 Elroi-OMS-Task. Technical Assessment Project.</p>
+            <p>&copy; {{ date('Y') }} Elroi Software Solution. Technical Assessment Project.</p>
             <p style="margin-top: 0.5rem; font-size: 0.75rem;">Requirements: PHP 8.2.12 | Laravel 12.46.0</p>
         </div>
     </footer>
