@@ -135,6 +135,8 @@
             border-radius: var(--radius-md);
             display: inline-block;
             font-weight: 500;
+            text-align: left;
+            max-width: 600px;
         }
 
         /* Main Content Grid */
@@ -233,6 +235,60 @@
             color: var(--secondary);
         }
 
+        /* --- NEW TAB STYLES --- */
+        .tab-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            background: #e0e7ff; /* Very light indigo */
+            padding: 0.25rem;
+            border-radius: var(--radius-md);
+            width: fit-content;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .tab-btn.active {
+            background: var(--bg-card);
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+            font-weight: 600;
+        }
+
+        .tab-content {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block; /* Show active */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* --- END TAB STYLES --- */
+
         /* Setup Instructions (Timeline Style) */
         .setup-step {
             position: relative;
@@ -248,7 +304,6 @@
         .step-number {
             position: absolute;
             left: -11px;
-            /* - 2px border + half width */
             top: 0;
             width: 20px;
             height: 20px;
@@ -425,19 +480,11 @@
             <p>A technical assessment focused on backend logic, database operations, and dynamic frontend interactions
                 using jQuery or JS.</p>
             <div class="requirements-box">
-                <i class="fa-solid fa-triangle-exclamation"></i> Important Note
+                <div style="margin-bottom: 0.5rem;"><i class="fa-solid fa-triangle-exclamation"></i> <strong>Important Note</strong></div>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+<strong>Do not use any AI tools</strong> while working on this task. This includes VS Code AI extensions, browser AI features, or ChatGPT. The task must be completed entirely by you.
 
-                Do not use any AI tools while working on this task.
-
-                This includes:
-
-                VS Code AI extensions
-
-                Browser AI features (AI Overview)
-
-                ChatGPT or similar AI tools
-
-                The task must be completed entirely by the candidate.
+<strong>You can use documents, StackOverflow, or similar resources.</strong></p>
             </div>
         </section>
 
@@ -453,40 +500,78 @@
                         <h2>Task Modules</h2>
                     </div>
 
-                    <div class="card">
-                        <div class="card-title"><i class="fa-solid fa-cart-plus"></i> Orders Module (Create)</div>
-                        <ul class="card-list">
-                            <li><strong>Customer Dropdown:</strong> Select from available customers.</li>
-                            <li><strong>Dynamic Rows:</strong> 'Add Product' button adds new line items.</li>
-                            <li><strong>Line Item:</strong> Product Select, Quantity, Price (Auto-filled), Amount
-                                (Calc).</li>
-                            <li><strong>Actions:</strong> Delete button per row.</li>
-                            <li><strong>jQuery Logic:</strong> Dynamic Grand Total calculation.</li>
-                            <li><strong>Database:</strong> Save to <code>orders</code> and <code>order_items</code>.
-                            </li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span class="tag">jQuery Events</span>
-                            <span class="tag">DOM Manipulation</span>
-                            <span class="tag">Transaction</span>
+                    <!-- TABS NAVIGATION -->
+                    <div class="tab-controls">
+                        <button class="tab-btn active" onclick="openTab(event, 'tab-junior')">
+                            <i class="fa-solid fa-seedling"></i> Below 2 Years
+                        </button>
+                        <button class="tab-btn" onclick="openTab(event, 'tab-senior')">
+                            <i class="fa-solid fa-user-tie"></i> 2+ Years
+                        </button>
+                    </div>
+
+                    <!-- TAB CONTENT: BELOW 2 YEARS -->
+                    <div id="tab-junior" class="tab-content active">
+                        <div class="card">
+                            <div class="card-title">
+                                <i class="fa-solid fa-cart-plus"></i> Orders Module (Create Only)
+                            </div>
+                            <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                                Focus entirely on the Order creation logic. No CRUD for Customers or Products is required.
+                            </p>
+                            <ul class="card-list">
+                                <li><strong>Customer Dropdown:</strong> Select from available customers.</li>
+                                <li><strong>Dynamic Rows:</strong> 'Add Product' button adds new line items.</li>
+                                <li><strong>Line Item:</strong> Product Select, Quantity, Price (Auto-filled), Amount
+                                    (Calc).
+                                </li>
+                                <li><strong>Actions:</strong> Delete button per row.</li>
+                                <li><strong>jQuery or JS Logic:</strong> Dynamic Grand Total calculation.</li>
+                                <li><strong>Database:</strong> Save to <code>orders</code> and <code>order_items</code>.
+                                </li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span class="tag">jQuery Events</span>
+                                <span class="tag">DOM Manipulation</span>
+                                <span class="tag">Transaction</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-title"><i class="fa-solid fa-clock-rotate-left"></i> Orders History</div>
-                        <ul class="card-list">
-                            <li>Display all orders in a table.</li>
-                            <li>Columns: Order ID, Customer Name, Date, Product Details, Grand Total.</li>
-                            <li><strong>Requirement:</strong> Use Query Builder with LEFT JOIN.</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span class="tag">Joins</span>
-                            <span class="tag">Aggregates</span>
+                    <!-- TAB CONTENT: 2+ YEARS -->
+                    <div id="tab-senior" class="tab-content">
+                        <div class="card">
+                            <div class="card-title">
+                                <i class="fa-solid fa-cart-plus"></i> Orders Module (Create + Dynamic Logic)
+                            </div>
+                            <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                                Advanced Order creation with on-the-fly data creation.
+                            </p>
+                            <ul class="card-list">
+                                <li><strong>Customer Dropdown:</strong> Select from the available customers.</li>
+                                <li><span class="tag" style="display:inline-block; font-size: 0.7rem; margin-right:5px;">+</span> <strong>Add Option:</strong> Provide an option to <em>add a new customer</em>.</li>
+                                <li><strong>AJAX Binding:</strong> The newly added customer should be bound to the same field using AJAX.</li>
+                                <li style="margin-top: 0.5rem;"><strong>Dynamic Rows:</strong> 'Add Product' button adds new line items.</li>
+                                <li><span class="tag" style="display:inline-block; font-size: 0.7rem; margin-right:5px;">+</span> <strong>Add Option:</strong> Provide an option to <em>add a new product</em>.</li>
+                                <li><strong>AJAX Binding:</strong> The newly added product should be bound to the same field using AJAX.</li>
+                                <li style="margin-top: 0.5rem;"><strong>Line Item:</strong> Product Select, Quantity, Price (Auto-filled), Amount (Calc).</li>
+                                <li><strong>Actions:</strong> Delete button per row.</li>
+                                <li><strong>jQuery or JS Logic:</strong> Dynamic Grand Total calculation.</li>
+                                <li><strong>Database:</strong> Save to <code>orders</code> and <code>order_items</code>.
+                                </li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span class="tag">jQuery Events</span>
+                                <span class="tag">AJAX</span>
+                                <span class="tag">DOM Manipulation</span>
+                                <span class="tag">Transaction</span>
+                            </div>
                         </div>
                     </div>
+
                 </section>
 
-                <!-- Section 2: API Endpoints -->
+                <!-- Section 2: API Endpoints (Common for both) -->
                 <section style="margin-top: 3rem;">
                     <div class="section-header">
                         <i class="fa-solid fa-plug"></i>
@@ -517,7 +602,7 @@
                 </section>
             </div>
 
-            <!-- Right Column: Setup Guide -->
+            <!-- Right Column: Setup Guide (Common for both) -->
             <div class="sidebar-col">
 
                 <div class="card" style="position: sticky; top: 100px;">
@@ -603,6 +688,25 @@
 
     <!-- Script for Interactivity -->
     <script>
+        // Tab Switching Logic
+        function openTab(evt, tabName) {
+            // 1. Hide all tab content
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            // 2. Remove "active" class from all buttons
+            const tabLinks = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+
+            // 3. Show the current tab, and add "active" class to the button that opened the tab
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
         function copyCode(button) {
             // Find the code container relative to the button
             const codeBlock = button.parentElement;
