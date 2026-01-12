@@ -48,3 +48,18 @@ php artisan serve
 
 
 Open your browser at http://127.0.0.1:8000
+
+
+
+=============================================
+order list example:
+
+Order #1002
+
+Customer: Alex Smith | Date: 11-Jan-2026 | Status: Pending
+
+Item Name	Qty	Price	Total
+Keyboard	1	₹1,200	₹1,200
+USB Hub	    1	₹800	₹800
+
+Order Total: ₹2,000

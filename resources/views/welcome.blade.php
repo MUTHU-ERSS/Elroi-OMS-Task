@@ -240,7 +240,8 @@
             display: flex;
             gap: 1rem;
             margin-bottom: 1.5rem;
-            background: #e0e7ff; /* Very light indigo */
+            background: #e0e7ff;
+            /* Very light indigo */
             padding: 0.25rem;
             border-radius: var(--radius-md);
             width: fit-content;
@@ -275,18 +276,28 @@
         }
 
         .tab-content {
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
             animation: fadeIn 0.3s ease-in-out;
         }
 
         .tab-content.active {
-            display: block; /* Show active */
+            display: block;
+            /* Show active */
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         /* --- END TAB STYLES --- */
 
         /* Setup Instructions (Timeline Style) */
@@ -480,11 +491,14 @@
             <p>A technical assessment focused on backend logic, database operations, and dynamic frontend interactions
                 using jQuery or JS.</p>
             <div class="requirements-box">
-                <div style="margin-bottom: 0.5rem;"><i class="fa-solid fa-triangle-exclamation"></i> <strong>Important Note</strong></div>
+                <div style="margin-bottom: 0.5rem;"><i class="fa-solid fa-triangle-exclamation"></i> <strong>Important
+                        Note</strong></div>
                 <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
-<strong>Do not use any AI tools</strong> while working on this task. This includes VS Code AI extensions, browser AI features, or ChatGPT. The task must be completed entirely by you.
+                    <strong>Do not use any AI tools</strong> while working on this task. This includes VS Code AI
+                    extensions, browser AI features, or ChatGPT. The task must be completed entirely by you.
 
-<strong>You can use documents, StackOverflow, or similar resources.</strong></p>
+                    <strong>You can use documents, StackOverflow, or similar resources.</strong>
+                </p>
             </div>
         </section>
 
@@ -514,10 +528,11 @@
                     <div id="tab-junior" class="tab-content active">
                         <div class="card">
                             <div class="card-title">
-                                <i class="fa-solid fa-cart-plus"></i> Orders Module (Create Only)
+                                <i class="fa-solid fa-cart-plus"></i> Orders Module (Create & Update Only)
                             </div>
                             <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
-                                Focus entirely on the Order creation logic. No CRUD for Customers or Products is required.
+                                Focus entirely on the Order creation logic. No CRUD for Customers or Products is
+                                required.
                             </p>
                             <ul class="card-list">
                                 <li><strong>Customer Dropdown:</strong> Select from available customers.</li>
@@ -529,6 +544,11 @@
                                 <li><strong>jQuery or JS Logic:</strong> Dynamic Grand Total calculation.</li>
                                 <li><strong>Database:</strong> Save to <code>orders</code> and <code>order_items</code>.
                                 </li>
+                                <li>
+                                    <strong>Listing View:</strong> List orders where each order is displayed in a
+                                    separate table including all order items.
+                                </li>
+
                             </ul>
                             <div class="tech-tags">
                                 <span class="tag">jQuery Events</span>
@@ -542,23 +562,38 @@
                     <div id="tab-senior" class="tab-content">
                         <div class="card">
                             <div class="card-title">
-                                <i class="fa-solid fa-cart-plus"></i> Orders Module (Create + Dynamic Logic)
+                                <i class="fa-solid fa-cart-plus"></i> Orders Module (Create + Update + Dynamic Logic)
                             </div>
                             <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
                                 Advanced Order creation with on-the-fly data creation.
                             </p>
                             <ul class="card-list">
                                 <li><strong>Customer Dropdown:</strong> Select from the available customers.</li>
-                                <li><span class="tag" style="display:inline-block; font-size: 0.7rem; margin-right:5px;">+</span> <strong>Add Option:</strong> Provide an option to <em>add a new customer</em>.</li>
-                                <li><strong>AJAX Binding:</strong> The newly added customer should be bound to the same field using AJAX.</li>
-                                <li style="margin-top: 0.5rem;"><strong>Dynamic Rows:</strong> 'Add Product' button adds new line items.</li>
-                                <li><span class="tag" style="display:inline-block; font-size: 0.7rem; margin-right:5px;">+</span> <strong>Add Option:</strong> Provide an option to <em>add a new product</em>.</li>
-                                <li><strong>AJAX Binding:</strong> The newly added product should be bound to the same field using AJAX.</li>
-                                <li style="margin-top: 0.5rem;"><strong>Line Item:</strong> Product Select, Quantity, Price (Auto-filled), Amount (Calc).</li>
+                                <li><span class="tag"
+                                        style="display:inline-block; font-size: 0.7rem; margin-right:5px;">+</span>
+                                    <strong>Add Option:</strong> Provide an option to <em>add a new customer</em>.
+                                </li>
+                                <li><strong>AJAX Binding:</strong> The newly added customer should be bound to the same
+                                    field using AJAX.</li>
+                                <li style="margin-top: 0.5rem;"><strong>Dynamic Rows:</strong> 'Add Product' button adds
+                                    new line items.</li>
+                                <li><span class="tag"
+                                        style="display:inline-block; font-size: 0.7rem; margin-right:5px;">+</span>
+                                    <strong>Add Option:</strong> Provide an option to <em>add a new product</em>.
+                                </li>
+                                <li><strong>AJAX Binding:</strong> The newly added product should be bound to the same
+                                    field using AJAX.</li>
+                                <li style="margin-top: 0.5rem;"><strong>Line Item:</strong> Product Select, Quantity,
+                                    Price (Auto-filled), Amount (Calc).</li>
                                 <li><strong>Actions:</strong> Delete button per row.</li>
                                 <li><strong>jQuery or JS Logic:</strong> Dynamic Grand Total calculation.</li>
                                 <li><strong>Database:</strong> Save to <code>orders</code> and <code>order_items</code>.
                                 </li>
+                                <li>
+                                    <strong>Listing View:</strong> List orders where each order is displayed in a
+                                    separate table including all order items.
+                                </li>
+
                             </ul>
                             <div class="tech-tags">
                                 <span class="tag">jQuery Events</span>
