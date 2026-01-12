@@ -1,63 +1,40 @@
-📦 Project Setup Instructions (Laravel 12)
-🔧 Requirements
+🚀 Setup Guide
 
-Make sure the following versions are installed on your system:
+Follow these steps to get the project running locally.
 
-PHP: 8.2.12
+1️⃣ Clone Repository
 
-Laravel Framework: 12.46.0
+If you’ve already cloned it, skip this step.
 
-Composer
-
-Git
-===============================================================
-📥 Clone the Repository
 git clone https://github.com/MUTHU-ERSS/Elroi-OMS-Task.git
 cd Elroi-OMS-Task
-===============================================================
-📦 Install Dependencies
+
+2️⃣ Install Dependencies
 composer install
-===============================================================
-⚙️ Environment Setup
 
-Generate application key:
+3️⃣ Environment Setup
 
-php artisan key:generate
+Create or copy the .env file.
 
-Database configuration (SQLite is recommended for this task):
-
-In .env file:
+Set database connection:
 
 DB_CONNECTION=sqlite
 
 
-Create SQLite database file:
+Create the SQLite database file:
 
 touch database/database.sqlite
-===============================================================
-🗄️ Run Migrations & Seeders
+
+4️⃣ Database & App Keys
+
+Generate the app key, migrate the database, and seed initial data:
+
+php artisan key:generate
 php artisan migrate
 php artisan db:seed
 
-
-===============================================================
-
-▶️ Run the Application
+5️⃣ Run Application
 php artisan serve
 
-===============================================================
-🔗 Available API Endpoints
 
-Use browser / Postman / curl to test:
-
-GET /api/customers
-GET /api/products
-
-
-Example:
-
-http://127.0.0.1:8000/api/customers
-http://127.0.0.1:8000/api/products
-
-
-All responses are returned in JSON format.
+Open your browser at http://127.0.0.1:8000
