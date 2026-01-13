@@ -2,6 +2,11 @@
 
 [![UI Preview](https://img.shields.io/badge/UI-Preview-blue)](https://muthu-erss.github.io/Elroi-OMS-Task/public/welcome/coding_round.html)
 
+## 🔗 Coding Round – UI Preview
+
+👉 **Live Preview:**  
+https://muthu-erss.github.io/Elroi-OMS-Task/public/welcome/coding_round.html
+
 ************************************************************
 
 Setup Guide
