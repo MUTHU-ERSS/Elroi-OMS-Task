@@ -7,6 +7,13 @@
 👉 **Live Preview:**  
 https://muthu-erss.github.io/Elroi-OMS-Task/public/welcome/coding_round.html
 
+
+## 📸 UI Sample (Reference)
+
+![Orders Module – UI Reference](public/welcome/oms_task_git.png)
+
+> This image is only a UI reference for the Orders Module. The final implementation does not need to match it exactly; a basic UI is sufficient.
+
 ************************************************************
 
 Setup Guide
