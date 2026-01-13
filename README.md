@@ -1,3 +1,9 @@
+# Elroi OMS – Coding Round Task
+
+[![UI Preview](https://img.shields.io/badge/UI-Preview-blue)](https://muthu-erss.github.io/Elroi-OMS-Task/public/welcome/coding_round.html)
+
+************************************************************
+
 Setup Guide
 
 Make sure the following versions are installed on your system:
@@ -8,7 +14,7 @@ Laravel Framework: 12.46.0
 
 Composer
 
-====================================================
+**************************************************************
 
 Follow these steps to get the project running locally.
 
